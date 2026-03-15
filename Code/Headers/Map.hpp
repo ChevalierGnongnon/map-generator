@@ -1,6 +1,5 @@
 #pragma once
-#include "DungeonManager.hpp"
-#include "Header.hpp"
+# include "Header.hpp"
 
 class Map{
     private:

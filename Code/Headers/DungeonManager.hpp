@@ -1,9 +1,5 @@
 #pragma once
-# include <string>
-# include <vector>
-# include <fstream>
-# include "Section.hpp"
-# include "Map.hpp"
+# include "Header.hpp"
 
 class DungeonManager{
     private :
@@ -28,6 +24,8 @@ class DungeonManager{
 
         void                            generateProceduralMaps();
         void                            generateDefaultMaps();
+
+        void                            generateMap(t_rules &rules);
 
         const Map                       &getMapByName(const std::string &name) const;
         const Map                       &getMapById(const size_t id) const;
