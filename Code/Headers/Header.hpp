@@ -12,7 +12,6 @@ typedef struct  s_rules{
     unsigned long                       height;
     unsigned long                       walkOn;
     unsigned long                       unaccessible;
-    unsigned long                       walls;
     unsigned long                       doors;
     unsigned long                       chests;
     unsigned long                       ennemies;
@@ -20,3 +19,16 @@ typedef struct  s_rules{
     unsigned long                       pnjs;
     unsigned long                       events;
 } t_rules;
+
+typedef enum e_connector_direction{
+    top,
+    left,
+    right,
+    bottom,
+} t_direction;
+
+typedef struct s_connector{
+    size_t      x_pos;
+    size_t      y_pos;
+    t_direction dir;
+} t_connector;
