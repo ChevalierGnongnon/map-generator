@@ -9,9 +9,9 @@ class Map{
         std::vector<std::string>            content;
         t_rules                             rules;
     public:
-        const std::string                   &getPath();
-        const std::string                   &getName();
-        const size_t                        &getId();
-        const std::vector<std::string>      &getContent();
-        const t_rules                       &getRules();
+        const std::string                   &getPath() const;
+        const std::string                   &getName() const;
+        const size_t                        &getId() const;
+        const std::vector<std::string>      &getContent() const;
+        const t_rules                       &getRules() const;
 };

@@ -44,12 +44,24 @@ void                            DungeonManager::generateMap(t_rules &rules){
 
 }
 
-const Map                       &DungeonManager::getMapByName(const std::string &name) const{
-
+const Map                       *DungeonManager::getMapByName(const std::string &name) const{
+	for (size_t i = 0; i < this->generatedMaps.size(); i++){
+		if (this->generatedMaps[i].getName() == name)
+			return (&this->generatedMaps[i]);
+	}
+	return (NULL);
 }
-const Map                       &DungeonManager::getMapById(const size_t id) const{
-
+const Map                       *DungeonManager::getMapById(const size_t id) const{
+	for (size_t i = 0; i < this->generatedMaps.size(); i++){
+		if (this->generatedMaps[i].getId() == id)
+			return (&this->generatedMaps[i]);
+	}
+	return (NULL);
 }
-const Map                       &DungeonManager::getMapByPath(const std::string &path) const{
-
+const Map                       *DungeonManager::getMapByPath(const std::string &path) const{
+	for (size_t i = 0; i < this->generatedMaps.size(); i++){
+		if (this->generatedMaps[i].getPath() == path)
+			return (&this->generatedMaps[i]);
+	}
+	return (NULL);
 }

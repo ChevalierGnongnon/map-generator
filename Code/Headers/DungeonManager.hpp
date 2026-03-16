@@ -27,7 +27,7 @@ class DungeonManager{
 
         void                            generateMap(t_rules &rules);
 
-        const Map                       &getMapByName(const std::string &name) const;
-        const Map                       &getMapById(const size_t id) const;
-        const Map                       &getMapByPath(const std::string &path) const;
+        const Map                       *getMapByName(const std::string &name) const;
+        const Map                       *getMapById(const size_t id) const;
+        const Map                       *getMapByPath(const std::string &path) const;
 };
