@@ -1,6 +1,9 @@
 type:room
 connectors_number:4
-{0,3|3,0|7,3|3|7}
+{0,3,up}
+{3,0,left}
+{7,3,down}
+{3,7,right}
 0000000
 0000000
 0000000
