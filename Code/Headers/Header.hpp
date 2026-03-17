@@ -40,4 +40,4 @@ typedef enum e_section_type{
 	room,
 	boss_room,
 	event_room
-} t_section;
+} t_section_type;
