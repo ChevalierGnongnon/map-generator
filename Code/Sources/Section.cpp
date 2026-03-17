@@ -14,6 +14,11 @@ Section::~Section(){
 const std::string				&Section::getPathToFile() const{
 	return (this->pathToFile);
 }
+
+const std::vector<std::string>	&Section::getContent() const{
+	return (this->content);
+}
+
 const std::vector<t_connector>	&Section::getConnectors() const{
 	return (this->connectors);
 }
@@ -25,4 +30,14 @@ size_t							Section::getWidth() const{
 }
 size_t							Section::getHeight() const{
 	return (this->height);
+}
+
+void							Section::EditMap(){
+	
+}
+void							Section::EditConnectors(){
+
+}
+void							Section::checker(){
+
 }
