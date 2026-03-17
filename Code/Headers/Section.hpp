@@ -16,7 +16,7 @@ class Section{
 
 		const std::string				&getPathToFile() const;
 		const std::vector<t_connector>	&getConnectors() const;
-		const t_section_type					&getType() const;
+		const t_section_type			&getType() const;
 		size_t							getWidth() const;
 		size_t							getHeight() const;
 };
