@@ -32,12 +32,16 @@ size_t							Section::getHeight() const{
 	return (this->height);
 }
 
-void							Section::EditMap(){
+void							Section::LoadFile(){
 	
 }
-void							Section::EditConnectors(){
+void							Section::LoadSection(){
 
 }
+void							Section::ParseConnectors(){
+
+}
+
 void							Section::checker(){
 
 }

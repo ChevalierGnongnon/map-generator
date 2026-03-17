@@ -23,8 +23,10 @@ class Section{
 		size_t								getWidth() const;
 		size_t								getHeight() const;
 
-		void								EditMap();
-		void								EditConnectors();
+		void								LoadFile();
+		void								LoadSection();
+		void								ParseConnectors();
+
 		void								checker();
 
 };
