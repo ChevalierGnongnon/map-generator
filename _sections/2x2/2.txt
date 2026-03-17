@@ -1,3 +1,5 @@
 type:corridor
+connectors_number:2
+0,0|0,1}
 00
   
