@@ -1,10 +1,10 @@
 #include "Header.hpp"
 
-Section::Section(const std::string &pathToFile){
+Section::Section(const std::string &pathToFile) : pathToFile(pathToFile){
 
 }
 
-Section::Section(const Section &src){
+Section::Section(const Section &src) : pathToFile(src.pathToFile){
 
 }
 Section::~Section(){
@@ -17,7 +17,7 @@ const std::string				&Section::getPathToFile() const{
 const std::vector<t_connector>	&Section::getConnectors() const{
 	return (this->connectors);
 }
-const t_section_type					&Section::getType() const{
+const t_section_type			&Section::getType() const{
 	return (this->type);
 }
 size_t							Section::getWidth() const{
