@@ -26,7 +26,6 @@ const t_rules                       &Map::getRules() const{
 	return (this->rules);
 }
 
-
 void								Map::build(){
 	
 }

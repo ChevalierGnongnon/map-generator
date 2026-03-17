@@ -33,7 +33,42 @@ size_t							Section::getHeight() const{
 }
 
 void							Section::LoadFile(){
-	
+	std::ifstream	file(this->pathToFile, std::ios::in);
+	std::string		line;
+	std::string		indicator;
+	size_t			lineNumber;
+	size_t			i = 0;
+
+	if (!file){
+		//here some stuff to handle file not opening
+		return ;
+	}
+	while (std::getline(file, line)){
+		i = 0;
+		if (line.empty()){
+			lineNumber++;
+			continue;
+		}
+		while (line[i] && line[i] != ':')
+			i++;
+		if (i == 0){
+			if (line[0] == '0')
+				LoadSection();
+			else if (line[0] == '{')
+				ParseConnectors();
+			else{
+				//here some stuff to handle bad maps
+			}
+		}
+		indicator = line.substr(0, i);
+		if (indicator == "type"){
+
+		}
+		else if (indicator == "connectors_number"){
+
+		}
+
+	}
 }
 void							Section::LoadSection(){
 
