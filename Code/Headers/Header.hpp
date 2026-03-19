@@ -39,3 +39,18 @@ typedef enum e_section_type{
 	boss_room,
 	event_room
 } t_section_type;
+
+typedef enum section_status{
+	E_RIGHTSERROR,
+	E_MISSINGTYPE,
+	E_MISSINGCONNECTORS,
+	E_NOSECTION,
+	E_INVALIDSECTION,
+	VALID
+} t_section_status;
+
+typedef enum map_status{
+	E_RIGHTSERROR,
+	E_SECTIONPROBLEM,
+	VALID
+} t_map_status;

@@ -32,7 +32,7 @@ size_t							Section::getHeight() const{
 	return (this->height);
 }
 
-bool							Section::LoadFile(){
+void							Section::LoadFile(){
 	std::ifstream	file(this->pathToFile, std::ios::in);
 	std::string		line;
 	std::string		tmp;
@@ -42,7 +42,6 @@ bool							Section::LoadFile(){
 
 	if (!file){
 		//here some stuff to handle file not opening
-		return ;
 	}
 	while (std::getline(file, line)){
 		i = 0;
@@ -56,7 +55,6 @@ bool							Section::LoadFile(){
 				ParseConnectors();
 			else {
 				file.close();
-				return (false);
 			}
 		}
 		else {
@@ -85,14 +83,15 @@ bool							Section::LoadFile(){
 			}
 		}
 	}
-}
-bool							Section::LoadSection(){
 
 }
-bool							Section::ParseConnectors(){
+void							Section::LoadSection(){
+
+}
+void							Section::ParseConnectors(){
 
 }
 
-bool							Section::checker(){
+void							Section::checker(){
 
 }
