@@ -3,10 +3,7 @@
 # include <vector>
 # include <iostream>
 # include <fstream>
-# include "Section.hpp"
-# include "Map.hpp"
-# include "DungeonManager.hpp"
-# include "Header.hpp"
+
 
 typedef struct  s_rules{
     unsigned long                       width;

@@ -1,5 +1,6 @@
 #pragma once
 # include "Header.hpp"
+# include "Section.hpp"
 
 class Map{
     private:

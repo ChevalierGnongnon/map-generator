@@ -35,6 +35,7 @@ size_t							Section::getHeight() const{
 bool							Section::LoadFile(){
 	std::ifstream	file(this->pathToFile, std::ios::in);
 	std::string		line;
+	std::string		tmp;
 	std::string		indicator;
 	size_t			lineNumber;
 	size_t			i = 0;
@@ -49,26 +50,40 @@ bool							Section::LoadFile(){
 			lineNumber++;
 			continue;
 		}
-		while (line[i] && line[i] != ':')
-			i++;
-		if (i == 0){
-			if (line[0] == '0')
-				LoadSection();
-			else if (line[0] == '{')
+		i = find(line, ':');
+		if (i == -1){
+			if (line[0] == '{')
 				ParseConnectors();
-			else{
-				//here some stuff to handle bad maps
+			else {
+				file.close();
+				return (false);
 			}
 		}
-		indicator = line.substr(0, i);
-		std::cout << "Indicator: " << indicator << std::endl;
-		if (indicator == "type"){
-			
-		}
-		else if (indicator == "connectors_number"){
+		else {
+			indicator = line.substr(0, i);
+			std::cout << "Indicator: " << indicator << std::endl;
+			if (indicator == "type"){
+				i++;
+				tmp = line.substr(i, line.length());
+				if (tmp == "corner")
+					this->type = corridor;
+				else if (tmp == "safe_place")
+					this->type = safe_place;
+				else if (tmp == "room")
+					this->type = room;
+				else if (tmp == "boss_room")
+					this->type = boss_room;
+				else if (tmp == "event_room")
+					this->type = event_room;
+				else{
+					file.close();
+					return (false);
+				}
+			}
+			else if (indicator == "connectors_number"){
 
+			}
 		}
-
 	}
 }
 bool							Section::LoadSection(){

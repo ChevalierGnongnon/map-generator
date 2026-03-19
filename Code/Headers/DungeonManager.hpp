@@ -1,5 +1,7 @@
 #pragma once
 # include "Header.hpp"
+# include "Section.hpp"
+# include "Map.hpp"
 
 class DungeonManager{
     private :
