@@ -4,6 +4,7 @@
 
 class Map{
     private:
+		t_map_status						status;
         const std::string                   path;
         const std::string                   name;
         size_t                              id;

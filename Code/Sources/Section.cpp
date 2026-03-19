@@ -1,4 +1,5 @@
 #include "Header.hpp"
+#include "Section.hpp"
 
 Section::Section(const std::string &pathToFile) : pathToFile(pathToFile){
 

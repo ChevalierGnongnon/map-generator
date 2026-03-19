@@ -3,6 +3,7 @@
 
 class Section{
     private:
+		t_section_status			status;
         const std::string			pathToFile;
 		std::vector<std::string>	content;
 		std::vector<t_connector>    connectors;
@@ -23,10 +24,10 @@ class Section{
 		size_t								getWidth() const;
 		size_t								getHeight() const;
 
-		bool								LoadFile();
-		bool								LoadSection();
-		bool								ParseConnectors();
+		void								LoadFile();
+		void								LoadSection();
+		void								ParseConnectors();
 
-		bool								checker();
+		void								checker();
 
 };
