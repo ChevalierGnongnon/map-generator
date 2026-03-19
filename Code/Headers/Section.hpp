@@ -23,10 +23,10 @@ class Section{
 		size_t								getWidth() const;
 		size_t								getHeight() const;
 
-		void								LoadFile();
-		void								LoadSection();
-		void								ParseConnectors();
+		bool								LoadFile();
+		bool								LoadSection();
+		bool								ParseConnectors();
 
-		void								checker();
+		bool								checker();
 
 };

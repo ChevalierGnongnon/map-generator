@@ -32,7 +32,7 @@ size_t							Section::getHeight() const{
 	return (this->height);
 }
 
-void							Section::LoadFile(){
+bool							Section::LoadFile(){
 	std::ifstream	file(this->pathToFile, std::ios::in);
 	std::string		line;
 	std::string		indicator;
@@ -61,8 +61,9 @@ void							Section::LoadFile(){
 			}
 		}
 		indicator = line.substr(0, i);
+		std::cout << "Indicator: " << indicator << std::endl;
 		if (indicator == "type"){
-
+			
 		}
 		else if (indicator == "connectors_number"){
 
@@ -70,13 +71,13 @@ void							Section::LoadFile(){
 
 	}
 }
-void							Section::LoadSection(){
+bool							Section::LoadSection(){
 
 }
-void							Section::ParseConnectors(){
+bool							Section::ParseConnectors(){
 
 }
 
-void							Section::checker(){
+bool							Section::checker(){
 
 }
