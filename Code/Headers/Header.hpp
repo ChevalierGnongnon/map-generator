@@ -3,6 +3,7 @@
 # include <vector>
 # include <iostream>
 # include <fstream>
+# include "tools.hpp"
 
 
 typedef struct  s_rules{
@@ -41,16 +42,16 @@ typedef enum e_section_type{
 } t_section_type;
 
 typedef enum section_status{
-	E_RIGHTSERROR,
-	E_MISSINGTYPE,
-	E_MISSINGCONNECTORS,
-	E_NOSECTION,
-	E_INVALIDSECTION,
-	VALID
+	E_SECTION_RIGHTSERROR,
+	E_SECTION_MISSINGTYPE,
+	E_SECTION_MISSINGCONNECTORS,
+	E_SECTION_NOSECTION,
+	E_SECTION_INVALIDSECTION,
+	SECTION_VALID
 } t_section_status;
 
 typedef enum map_status{
-	E_RIGHTSERROR,
-	E_SECTIONPROBLEM,
-	VALID
+	E_MAP_RIGHTSERROR,
+	E_MAP_SECTIONPROBLEM,
+	MAP_VALID
 } t_map_status;

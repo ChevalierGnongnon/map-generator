@@ -35,6 +35,7 @@ size_t							Section::getHeight() const{
 
 void							Section::LoadFile(){
 	std::ifstream	file(this->pathToFile, std::ios::in);
+
 	std::string		line;
 	std::string		tmp;
 	std::string		indicator;
@@ -42,7 +43,8 @@ void							Section::LoadFile(){
 	size_t			i = 0;
 
 	if (!file){
-		//here some stuff to handle file not opening
+		this->status = E_SECTION_RIGHTSERROR;
+		return ;
 	}
 	while (std::getline(file, line)){
 		i = 0;
@@ -50,15 +52,12 @@ void							Section::LoadFile(){
 			lineNumber++;
 			continue;
 		}
-		i = find(line, ':');
-		if (i == -1){
-			if (line[0] == '{')
-				ParseConnectors();
-			else {
-				file.close();
-			}
+		if (line == "--Section--"){
+			LoadSection();
+			return;
 		}
-		else {
+		i = find(line, ':');
+		if (i != -1) {
 			indicator = line.substr(0, i);
 			std::cout << "Indicator: " << indicator << std::endl;
 			if (indicator == "type"){
@@ -76,11 +75,14 @@ void							Section::LoadFile(){
 					this->type = event_room;
 				else{
 					file.close();
-					return (false);
+					this->status = E_SECTION_INVALIDSECTION;
+					return;
 				}
 			}
 			else if (indicator == "connectors_number"){
-
+				i++;
+				for (size_t j = i; j < line.length() && (line[i] >= '0' && line[i] <= '9'); j++)
+					this->nbConnectors = this->nbConnectors * (line[i] - '0');
 			}
 		}
 	}
